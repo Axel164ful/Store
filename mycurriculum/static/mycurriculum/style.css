@@ -1,0 +1,110 @@
+/* [class*= "col-"]{
+	float:left;
+	border:1px solid black;
+	padding:auto;
+}
+*/
+
+
+#fecha{
+	font-family: "Courier New", Courier, monospace;
+	font-weight: 100;
+	font-size: 15px;
+}
+
+#cuerpo1, #cuerpo2, #nombre, #final{
+	font-family: "comic sans"
+}
+#nombre{
+	font-size: 27px;
+}
+#cuerpo1, #cuerpo2{
+	font-size: 18px;
+	 
+}
+#cuerpo2{
+	background-color:rgba(233, 246, 236, 0.4);: 
+}
+
+#cuerpo1{
+	background-color:rgba(255, 238, 224, 0.4);
+}
+
+#final{
+		background-color:rgba(242, 241, 241);
+}
+@media (min-width: 1200px){
+
+	#cuerpo1, #cuerpo2{
+		float:left;
+		height: 108vh ;
+			}
+	#final{
+		float: left;
+		height: 15vh;
+	      }
+
+
+
+}
+@media (max-width: 1199px) and (min-width:992px){
+	#cuerpo1, #cuerpo2{
+		float:left;
+		height: 125vh ;
+			}
+	#final{
+		float: left;
+		height: 15vh;
+	      }
+}
+
+
+
+
+
+@media (max-width: 991px) and (min-width:768px){
+	#cuerpo1, #cuerpo2{
+		float:left;
+		height: 95vh ;
+		
+			}
+	#final{
+		float: left;
+		height: 15vh;
+	      }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 767px){
+		#cuerpo1{
+			float: left;
+			height: 130vh;
+		} 
+		#cuerpo2{
+		float:left;
+		height: 120vh ;
+		
+			}
+		#nombre{
+			height: 5vh;
+		}
+		#final{
+			float: left;
+			height: 25vh;
+	     	 }
+}
