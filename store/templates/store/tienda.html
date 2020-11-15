@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Luci's</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'store/style.css' %}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+<body>
+
+	
+	<div class="container-fluid">
+
+
+		<div class="row" >
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" id="cuerpo1">
+				
+				<h1 id="presentacion" style='color: #1a889f;'>Servicios</h1>
+			
+				{%for a in lista_serv%}
+				<a href="{% url 'store:storevw' a.id %}" class="list-group-item" style="color:#177a0b;">{{a}}</a>
+				
+				{%endfor%}
+				<br>
+			</div>
+			<div class ="col-lg-9 col-md-9 col-sm-9 col-xs-12" id="cuerpo2">
+				<p class= "text-right" id="hora">{{hora}}</p>
+				
+				<H1 class="text-center" id ="presentacion3"style='color: #1a889f;'>Internet Luci</H1>
+				<br>
+				<nav id="menu">
+					<ul>
+						<li class="text-center"><a href="https://www.ilovepdf.com/es">Herramienta para PDF's</a>
+						</li>
+						<li><a href="">Correos Electronicos</a>
+							<ul>
+								<li><a href="https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin">Gmail</a></li>
+
+								<li><a href="https://outlook.live.com/owa/">Outlook</a></li>
+							</ul>
+						</li>
+						<li><a href="https://zoom.us/">Zoom</a></li>
+					</ul>
+				</nav>
+				<br>
+				<br>
+				<br>
+				<!-- Búsqueda Google -->
+				<center>
+				<FORM method=GET action="http://www.google.com/search">
+				<TABLE bgcolor="#FFFFFF"><tr><td>
+				<A HREF="http://www.google.com/">
+				<IMG SRC="https://www.trecebits.com/wp-content/uploads/2015/09/nuevo_logo_google.jpg" border="0" ALT="Google" align="absmiddle" width="150" height="90" ></A>
+				<INPUT TYPE=text name=q size=31 maxlength=255 value="">
+				<INPUT TYPE=hidden name=hl value=es>
+				<INPUT type=submit name=btnG VALUE="Búsqueda Google" style="color:#1a889f;">
+				</td></tr></TABLE>
+				</FORM>
+				</center>
+				<!-- Búsqueda Google -->
+				<br>
+				<br>
+				
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-3 colxs-12" id="cuerpo3">
+				
+				<a href=""><img src="{% static 'store/Anunciate4.gif' %}" alt="Cinque Terre" class="img-thumbnail"></a>
+			</div>
+			<div class ="col-lg-9 col-md-9 col-sm-9 col-xs-12" id="cuerpo4">
+				<h3 class="text-center"id="presentacion2"style='color: #1a889f;' >{{salida}}</h3>
+				<br>
+				{% for conte in salida.conte_set.all %}
+    				 <p style="color:#177a0b;">{{ conte.descrip_servicio}}</p>
+    				 <br>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-3 colxs-12" id="cuerpo5">
+
+				<img src="{% static 'store/Anunciate5.gif' %}" alt="Cinque Terre" class="img-thumbnail">
+			</div>
+			<div class ="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="cuerpo6">
+				<br>
+				<h2 class="text-center" id="presentacion2"style='color: #1a889f;'>Sitios mas usados</h2>
+				<div class="text-center">
+					<a a href="https://www.facebook.com//"target="_blank" style='color: #3b5998;'class="link"> 
+					<i class='fab fa-facebook' style='font-size:102px;' id="icc"></i>
+					</a>
+					<a a href="https://www.instagram.com/"target="_blank" style='text-decoration:none;color: #3f729b'class="link"> 
+					<i class='fab fa-instagram' style='font-size:102px;'id="icc2"></i>
+					</a>
+					<a a href="https://twitter.com/"target="_blank"style='text-decoration:none;color:#00acee;'class="link"> 
+					<i class='fab fa-twitter-square' style='font-size:102px;'id="icc3"></i>
+					</a>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-3 colxs-12" id="cuerpo7">
+
+				<img src="{% static 'store/Anunciate3.gif' %}" alt="Cinque Terre" class="img-thumbnail">
+			</div>
+		</div>
+
+
+
+		<div class = "row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="final">
+				
+				<a href="{%url 'curriculums:curriculum' 2 %}" style='color: #13f86a;'><p class ="text-right">Sobre el Programador.</p></a>
+				<a href="{%url 'store:versiones'  %}" style='color: #13f86a;'><p class ="text-right">Versión 1.0.1 Beta.</p></a>
+
+			</div>
+
+		</div>
+
+
+	</div>
+	
+
+</body>
+</html>
